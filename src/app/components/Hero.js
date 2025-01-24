@@ -4,8 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedinIn } from "react-icons/fa";
 import Image from "next/image"; // Import Image from next/image
-import raman from "../raman.png"; // Assuming the image is in the public directory
 import Typewriter from "./Typewriter";
+
+// Replace local imports with CloudFront URLs
+const cloudFrontURL = "https://dxvutl5ln4i40.cloudfront.net/raman.png";
 
 const Hero = () => {
   const imageVariants = {
@@ -79,7 +81,7 @@ const Hero = () => {
         {/* Image */}
         <div className="relative w-[22rem] h-[22rem] z-20 flex justify-center items-center md:scale-100 scale-50">
           <Image
-            src={raman} // Image path (ensure it's in the 'public' directory or use the correct path)
+            src={cloudFrontURL} // Image path (ensure it's in the 'public' directory or use the correct path)
             alt="Raman Oraha"
             width={304} // Specify width (scaled to fit the design)
             height={384} // Specify height (scaled to fit the design)
